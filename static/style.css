@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    background: radial-gradient(circle at center, #1e293b, #0f172a);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.main {
+    margin-top: 100px;
+}
+
+.orb {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 20px auto;
+    background: linear-gradient(45deg, #06b6d4, #3b82f6);
+    box-shadow: 0 0 60px #3b82f6;
+    display: none;
+}
+
+.speaking {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 20px #3b82f6; }
+    50% { transform: scale(1.2); box-shadow: 0 0 60px #06b6d4; }
+    100% { transform: scale(1); box-shadow: 0 0 20px #3b82f6; }
+}
+
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
