@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Voice AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-body">
+
+<div class="auth-card">
+  <h1>Login</h1>
+  <p class="auth-sub">Login to access your Voice AI</p>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" action="/login" class="auth-form">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login with Password</button>
+  </form>
+
+  <hr class="auth-divider">
+
+  <form method="POST" action="/send_otp" class="auth-form">
+    <input type="email" name="email" placeholder="Enter Email for OTP" required>
+    <button type="submit">Send OTP</button>
+  </form>
+
+  <form method="POST" action="/verify_otp" class="auth-form">
+    <input type="text" name="otp" placeholder="Enter OTP" required>
+    <button type="submit">Login with OTP</button>
+  </form>
+
+  <p class="auth-link">Don't have an account? <a href="/signup">Signup</a></p>
+</div>
+
+</body>
+</html>

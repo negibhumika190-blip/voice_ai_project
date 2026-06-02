@@ -1,0 +1,6 @@
+Flask
+openai-whisper
+TTS
+requests
+python-dotenv
+Werkzeug
